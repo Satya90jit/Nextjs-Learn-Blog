@@ -8,17 +8,22 @@ const ServiceCard = ({
   singleCardItem: ServiceCardType;
 }) => {
   //hooks
-  const [cart, setCart] = useState(false);
+  const [cart, setCart] = useState(false);  //boolean
 
   const handleCartBtn = () => {
-    setCart(!cart); //randomly change true false ( state change)
+    setCart(!cart); //randomly change true false ( state change) // toogle
   };
 
-  const [buy, setBuy] = useState("Buy Now");
+  const [buy, setBuy] = useState("Buy");  // number or string 
 
   const handleBuyBtn = () => {
     setBuy("Purchased");
   };
+
+
+  const [title , setTitle] = useState("")
+  const [desc, setDesc] = useState("")
+  const [image, setImage] = useState("")
 
   return (
     <>
@@ -60,7 +65,15 @@ const ServiceCard = ({
           >
             {buy}
           </button>
+
+
+          <input
+          type="text"
+          onChange={(e)=> setTitle(e.target.value)}
+          />
         </div>
+
+        <p>{title}</p>
       </section>
     </>
   );

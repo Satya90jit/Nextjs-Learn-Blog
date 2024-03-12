@@ -15,8 +15,10 @@
     "@mui/material": "^5.14.20",
     "material-icons": "^1.13.12",
     "next": "14.0.4",
+    "next-auth": "^4.24.5",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-query": "^3.39.3"
   },
   "devDependencies": {
     "@types/node": "^20",

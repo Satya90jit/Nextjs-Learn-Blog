@@ -1,6 +1,6 @@
 // Blog.tsx
 import React, { useCallback, useEffect, useState } from "react";
-import BlogForm from "@/components/form/BlogForm";
+import BlogForm from "@/components/form/Blogform";
 import BlogPost from "@/components/card/BlogPost";
 
 const Blog = () => {

@@ -5,7 +5,6 @@ import ServiceSection from "@/components/home/ServiceSection";
 
 const Home = () => {
   return (
-    // some
     <>
       <Navbar />
       <section className="my-24">

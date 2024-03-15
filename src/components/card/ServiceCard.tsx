@@ -8,22 +8,21 @@ const ServiceCard = ({
   singleCardItem: ServiceCardType;
 }) => {
   //hooks
-  const [cart, setCart] = useState(false);  //boolean
+  // const [cart, setCart] = useState(false); //boolean
 
-  const handleCartBtn = () => {
-    setCart(!cart); //randomly change true false ( state change) // toogle
-  };
+  // const handleCartBtn = () => {
+  //   setCart(!cart); //randomly change true false ( state change) // toogle
+  // };
 
-  const [buy, setBuy] = useState("Buy");  // number or string 
+  // const [buy, setBuy] = useState("Buy"); // number or string
 
-  const handleBuyBtn = () => {
-    setBuy("Purchased");
-  };
+  // const handleBuyBtn = () => {
+  //   setBuy("Purchased");
+  // };
 
-
-  const [title , setTitle] = useState("")
-  const [desc, setDesc] = useState("")
-  const [image, setImage] = useState("")
+  // const [title, setTitle] = useState("");
+  // const [desc, setDesc] = useState("");
+  // const [image, setImage] = useState("");
 
   return (
     <>
@@ -35,12 +34,12 @@ const ServiceCard = ({
             src={singleCardItem.image}
             className={`rounded-lg ${
               singleCardItem.color ? singleCardItem.color : ""
-            } p-1 `}
+            } p-5 `}
           />
           <h1
             className={`absolute top-2 left-2 text-white ${
               singleCardItem?.category == "Science"
-                ? "bg-red-800"
+                ? "bg-green-800"
                 : "bg-blue-800"
             } px-2 py-1 rounded-md text-sm inline-block`}
           >
@@ -51,7 +50,7 @@ const ServiceCard = ({
           {singleCardItem.title}
         </p>
         <p className="text-gray-600  text-sm">{singleCardItem.desc}</p>
-        <div className="flex justify-between items-center">
+        {/* <div className="flex justify-between items-center">
           <button
             onClick={handleCartBtn}
             className="text-white hover:underline hover:text-slate-100 bg-blue-800/60 px-4 py-2 rounded-lg"
@@ -71,9 +70,9 @@ const ServiceCard = ({
           type="text"
           onChange={(e)=> setTitle(e.target.value)}
           />
-        </div>
+        </div> */}
 
-        <p>{title}</p>
+        {/* <p>{title}</p> */}
       </section>
     </>
   );

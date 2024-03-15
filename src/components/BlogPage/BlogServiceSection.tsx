@@ -22,6 +22,11 @@ const BlogServiceSection = () => {
       title: "My weekly popular four",
       desc: "000008 played well",
     },
+    {
+      id: 5,
+      title: "My weekly popular five",
+      desc: "000008 played well",
+    },
   ];
   const blogCardData = [
     {
@@ -39,10 +44,6 @@ const BlogServiceSection = () => {
       <div className="w-[70%] space-y-4">
         <h1 className="text-gray-800 font-semibold text-xl">Featured Melody</h1>
         <div className="grid grid-cols-3 gap-10">
-          <BlogCard />
-          <BlogCard />
-          <BlogCard />
-          <BlogCard />
           <BlogCard />
           <BlogCard />
           <BlogCard />

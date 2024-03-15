@@ -20,7 +20,7 @@ const ServiceSection = () => {
       desc: "Praesent vel dui nec orci bibendum luctus. Integer sed arcu ac turpis fermentum consectetur. Nullam auctor nisi nec felis ullamcorper, nec cursus orci hendrerit. Suspendisse potenti. Vivamus at ex eu justo bibendum suscipit.",
     },
     {
-      color: "bg-gray-300",
+      color: "bg-blue-900/60",
       category: "Technology",
       image:
         "https://thumbs.dreamstime.com/b/digital-transformation-technology-strategy-ideas-adoption-business-age-enhancing-global-capabilities-215266548.jpg",
@@ -45,11 +45,13 @@ const ServiceSection = () => {
   ];
   return (
     <section className="my-16 mx-32">
-      <div className="bg-blue-200/20 flex justify-center">
+      {/* heading */}
+      <div className="bg-blue-800/20 flex justify-center">
         <h1 className="text-3xl font-semibold text-gray-800 py-5 text-center">
           OUR SERVICES
         </h1>
       </div>
+      {/* services cards */}
       <div className="grid grid-cols-4 gap-7 my-8">
         {SERVICE_ARRAY.map((singleCardItem: ServiceCardType) => (
           <ServiceCard singleCardItem={singleCardItem} />

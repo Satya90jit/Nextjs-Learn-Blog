@@ -5,25 +5,43 @@ import BlogCard from "@/components/card/BlogCard";
 import BlogForm from "@/components/form/Blogform";
 
 const BlogPage = () => {
-  const [posts, setPosts] = useState([]);
+  // if props or states update then the component will rerender
+  // example understanding of the useEffect concept
 
-  const getFromlocalStorage = () => {
-    const storedData: any = JSON.parse(
-      localStorage.getItem("blogData") || "[]"
-    );
-    setPosts(storedData);
-    console.log("==> getlocalstorage calling", storedData);
+  const [toggle, setToggle] = useState(false);
+
+  const myFunc = () => {
+    setToggle(true);
   };
 
   useEffect(() => {
-    getFromlocalStorage();
-  }, []); // parameter ( function , deendency)
+    myFunc();
+  }, []);
+
+  useEffect(() => {}, []); // its have two parameter one function and a dependency
 
   // []   ...... empty dependency , run the useeffect only once
   // [sate]  ... state dependency , run the useeffect when sate change
   // [props] ... ... props dependency , run the useeffect when props change
 
+  // BLOG POST WORK START ................................................................
+
+  const [posts, setPosts] = useState([]); // state , string , boolean , array , object , number
+
+  // const getFromlocalStorage = () => {
+  //   const storedData: any = JSON.parse(
+  //     localStorage.getItem("blogData") || "[]"
+  //   );
+  //   setPosts(storedData);
+  //   console.log("==> getlocalstorage calling", storedData);
+  // };
+
+  // useEffect(() => {
+  //   getFromlocalStorage();
+  // }, []); // parameter ( function , dependency)
+
   const saveBlog = (newPost: any) => {
+    console.log("running......save-blog");
     const updatedPosts: any = [...posts, newPost];
     setPosts(updatedPosts);
     localStorage.setItem("blogData", JSON.stringify(updatedPosts));
@@ -42,6 +60,17 @@ const BlogPage = () => {
             <BlogCard key={index} post={post} />
           ))}
         </div>
+        {toggle ? (
+          <p className="text-white bg-black p-2 rounded-md">TOGGLE SHOWING</p>
+        ) : (
+          ""
+        )}
+        {/* <button
+          onClick={() => setToggle(!toggle)}
+          className="px-4 py-2 rounded-md bg-slate-900 text-white my-10"
+        >
+          toggle me{" "}
+        </button> */}
       </section>
       <Footer />
     </>

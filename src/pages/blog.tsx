@@ -8,17 +8,17 @@ const BlogPage = () => {
   // if props or states update then the component will rerender
   // example understanding of the useEffect concept
 
-  const [toggle, setToggle] = useState(false);
+  // const [toggle, setToggle] = useState(false);
 
-  const myFunc = () => {
-    setToggle(true);
-  };
+  // const myFunc = () => {
+  //   setToggle(true);
+  // };
 
-  useEffect(() => {
-    myFunc();
-  }, []);
+  // useEffect(() => {
+  //   myFunc();
+  // }, []);
 
-  useEffect(() => {}, []); // its have two parameter one function and a dependency
+  // useEffect(() => {}, []); // its have two parameter one function and a dependency
 
   // []   ...... empty dependency , run the useeffect only once
   // [sate]  ... state dependency , run the useeffect when sate change
@@ -28,17 +28,19 @@ const BlogPage = () => {
 
   const [posts, setPosts] = useState([]); // state , string , boolean , array , object , number
 
-  // const getFromlocalStorage = () => {
-  //   const storedData: any = JSON.parse(
-  //     localStorage.getItem("blogData") || "[]"
-  //   );
-  //   setPosts(storedData);
-  //   console.log("==> getlocalstorage calling", storedData);
-  // };
+  const getFromlocalStorage = () => {
+    const storedData: any = JSON.parse(
+      localStorage.getItem("blogData") || "[]"
+    );
+    setPosts(storedData);
+    console.log("==> getlocalstorage calling", storedData);
+  };
 
-  // useEffect(() => {
-  //   getFromlocalStorage();
-  // }, []); // parameter ( function , dependency)
+  useEffect(() => {
+    getFromlocalStorage();
+  }, []); // parameter ( function , dependency)
+
+  //we use here spread and rest operator.....................................................
 
   const saveBlog = (newPost: any) => {
     console.log("running......save-blog");
@@ -60,11 +62,11 @@ const BlogPage = () => {
             <BlogCard key={index} post={post} />
           ))}
         </div>
-        {toggle ? (
+        {/* {toggle ? (
           <p className="text-white bg-black p-2 rounded-md">TOGGLE SHOWING</p>
         ) : (
           ""
-        )}
+        )} */}
         {/* <button
           onClick={() => setToggle(!toggle)}
           className="px-4 py-2 rounded-md bg-slate-900 text-white my-10"

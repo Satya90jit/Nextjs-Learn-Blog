@@ -5,6 +5,8 @@ const BlogForm = ({ saveBlog }: any) => {
   const [desc, setDesc] = useState("");
   const [image, setImage] = useState("");
 
+  console.log("image---->", image);
+
   const hanaleAddPost = () => {
     const newPost = { title, desc, image }; // new object of the blog created
     saveBlog(newPost);

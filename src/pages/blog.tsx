@@ -54,10 +54,10 @@ const BlogPage = () => {
   return (
     <>
       <Navbar />
-      <section className="flex flex-col items-center justify-center h-[100%] bg-blue-600/10">
-        <h1 className="text-4xl font-bold mb-8">MY BLOG DETAILS</h1>
+      <section className="flex flex-col items-center justify-center h-[100%] bg-gray-900">
+        <h1 className="text-4xl text-white font-bold mb-8">MY BLOG DETAILS</h1>
         <BlogForm saveBlog={saveBlog} />
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="my-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-7">
           {posts?.map((post, index) => (
             <BlogCard key={index} post={post} />
           ))}
